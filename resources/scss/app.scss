@@ -1,1 +1,26 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+header{
+    height: 80px;
+}
+
+aside{
+    background-color: #dfeaf8;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.075);
+    height: calc(100vh - 80px);
+    padding-top: 20px;
+
+    a{
+        text-decoration: none;
+        color: rgb(97, 97, 97);
+        transition: 0.3s;
+        &:hover{
+            color: rgb(23, 23, 23);
+        }
+    }
+}
+
+.main-wrapper{
+    height: calc(100vh - 80px)
+}
+
