@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('title')
+    | Crea
+@endsection
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center px-5 py-3">
