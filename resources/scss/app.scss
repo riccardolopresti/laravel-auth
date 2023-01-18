@@ -21,6 +21,14 @@ aside{
 }
 
 .main-wrapper{
-    height: calc(100vh - 80px)
+    height: calc(100vh - 80px);
+    overflow: auto;
+}
+
+.table-container{
+    margin-top: 20px;
+    width: 100%;
+    border: 1px solid gainsboro;
+    border-radius: 15px;
 }
 

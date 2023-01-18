@@ -18,9 +18,9 @@ class ProjectSeeder extends Seeder
     {
         for ($i=0; $i < 100; $i++) {
             $new_project = new Project();
-            $new_project->name = $faker->sentence(2);
+            $new_project->name = $faker->name();
             $new_project->slug = Project::SlugGenerator($new_project->name);
-            $new_project->client_name = $faker->sentence(2);
+            $new_project->client_name = $faker->company();
             $new_project->summary = $faker->paragraph();
             $new_project->cover_image = $faker->imageUrl(640, 480, 'user', true);
             $new_project->save();
