@@ -4,6 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="px-5 py-3">
+            @if (session('delete'))
+                <div class="alert alert-success" role="alert">
+                    {{session('delete')}}
+                </div>
+            @endif
             <h1 class="text-uppercase text-black-50">Lista dei Progetti</h1>
             <div class="table-container pt-2">
                 <table class="table">
@@ -29,7 +34,7 @@
                                 <td>
                                     <a class="btn btn-primary" href="{{route('admin.projects.show', $project->slug)}}" role="button"><i class="fa-solid fa-eye"></i></a>
                                     <a class="btn btn-warning" href="{{route('admin.projects.edit', $project->slug)}}" role="button"><i class="fa-solid fa-pen"></i></a>
-                                    <a class="btn btn-danger" href="#" role="button"><i class="fa-solid fa-trash"></i></a>
+                                    @include('admin.partials.delete-form')
                                 </td>
                             </tr>
                         @endforeach

@@ -84,9 +84,17 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        $form_data= $request->all();
 
+        if($form_data['name'] != $project['name']){
+            $form_data['slug'] = Project::SlugGenerator($form_data['name']);
+        }else{
+            $project['slug'];
+        }
 
+        $project->update($form_data);
 
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
@@ -97,6 +105,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('admin.projects.index')->with('delete',"L'elemento $project->name è stato eliminato correttamente");
     }
 }
