@@ -37,7 +37,6 @@
                     </aside>
                 @endauth
 
-
                 <div class="@auth col-10 p-0 @endauth">
                     <main class="main-wrapper">
                         @yield('content')
@@ -45,9 +44,6 @@
                 </div>
             </div>
         </div>
-
-
-
 
     </div>
 </body>
