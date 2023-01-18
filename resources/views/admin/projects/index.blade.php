@@ -11,7 +11,7 @@
             @endif
             <h1 class="text-uppercase text-black-50">Lista dei Progetti</h1>
             <div class="table-container pt-2">
-                <table class="table">
+                <table class="table table-striped">
 
                     <div class="new-project px-2 py-3">
                         <a class="btn btn-success" href="{{route('admin.projects.create')}}" role="button"><i class="fa-solid fa-plus"></i> Nuovo Progetto</a>

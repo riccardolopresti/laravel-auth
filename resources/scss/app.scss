@@ -32,3 +32,29 @@ aside{
     border-radius: 15px;
 }
 
+.page-link{
+    color: rgb(97, 97, 97);
+}
+
+.page-link.active, .active > .page-link{
+    background-color: #dfeaf8;
+    border-color: gainsboro;
+    color: rgb(23, 23, 23);;
+}
+
+ol, ul, dl{
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.show{
+    text-align: end;
+    padding-right: 10px;
+    z-index: 99;
+}
+
+@media screen and (max-width: 941px) {
+    .aside-wrapper span{
+        display: none;
+    }
+}

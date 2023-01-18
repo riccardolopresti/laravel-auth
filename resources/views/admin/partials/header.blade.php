@@ -34,8 +34,8 @@
             @else
                 <li class="nav-item dropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();"><i class="fa-solid fa-user"></i>
-                            {{ __('Logout') }}
+                                             document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }} <i class="fa-solid fa-right-from-bracket"></i>
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
