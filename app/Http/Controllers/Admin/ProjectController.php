@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(15);
+        $projects = Project::orderBy('id','desc')->paginate(15);
 
         return view('admin.projects.index', compact('projects'));
     }
@@ -69,9 +69,10 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit($slug)
     {
-        //
+        $project = Project::where('slug',$slug)->first();
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -83,7 +84,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+
+
+
     }
 
     /**

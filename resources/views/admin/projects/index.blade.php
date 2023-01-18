@@ -28,7 +28,7 @@
                                 <td>{{$project->client_name}}</td>
                                 <td>
                                     <a class="btn btn-primary" href="{{route('admin.projects.show', $project->slug)}}" role="button"><i class="fa-solid fa-eye"></i></a>
-                                    <a class="btn btn-warning" href="#" role="button"><i class="fa-solid fa-pen"></i></a>
+                                    <a class="btn btn-warning" href="{{route('admin.projects.edit', $project->slug)}}" role="button"><i class="fa-solid fa-pen"></i></a>
                                     <a class="btn btn-danger" href="#" role="button"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
