@@ -8,19 +8,31 @@
 
         <div class="col">
             <div class="table-container px-5 py-3 ">
-                <form >
+                <form action="{{route('admin.projects.store')}}" method="POST">
+                    @csrf
+
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome progetto*</label>
-                        <input type="text" class="form-control" id="name" placeholder="Nome del progetto">
+                        <input type="text" class="form-control" id="name" value="{{old('name')}}" name="name" placeholder="Nome del progetto">
                     </div>
-
 
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="client_name" class="form-label">Nome del cliente*</label>
+                        <input type="text" class="form-control" id="client_name" value="{{old('client_name')}}" name="client_name" placeholder="Nome del cliente">
                     </div>
 
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <div class="mb-3">
+                        <label for="cover_image" class="form-label">URL immagine*</label>
+                        <input type="text" class="form-control" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="URL immagine">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="summary" class="form-label">Descrizione*</label>
+                        <textarea class="form-control" id="summary" name="summary" rows="3"
+                        placeholder="Descrizione"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Crea</button>
                   </form>
             </div>
         </div>
