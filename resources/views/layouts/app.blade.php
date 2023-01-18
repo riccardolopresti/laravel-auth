@@ -31,11 +31,14 @@
 
         <div class="container-fluid">
             <div class="row">
-                <aside class="col-2">
-                    @include('admin.partials.aside')
-                </aside>
+                @auth
+                    <aside class="col-2">
+                        @include('admin.partials.aside')
+                    </aside>
+                @endauth
 
-                <div class="col-10 p-0">
+
+                <div class="@auth col-10 p-0 @endauth">
                     <main class="main-wrapper">
                         @yield('content')
                     </main>
