@@ -20,6 +20,9 @@
 
                     <div class="new-project px-2 py-3">
                         <a class="btn btn-success" href="{{route('admin.projects.create')}}" role="button"><i class="fa-solid fa-plus"></i> Nuovo Progetto</a>
+                        <div class="total py-2">
+                            <strong>Numero totali dei progetti:</strong><span> {{$projects->total()}}</span>
+                        </div>
                     </div>
 
                     <thead>
