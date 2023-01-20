@@ -101,7 +101,7 @@ class ProjectController extends Controller
             $project['slug'];
         }
 
-        if(array_key_exists('image',$form_data)){
+        if(array_key_exists('cover_image',$form_data)){
 
             // se invio una nuova immagine devo eliminare la vecchia dal filesystem
             if($project->cover_image){
