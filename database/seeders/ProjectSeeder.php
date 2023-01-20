@@ -22,7 +22,6 @@ class ProjectSeeder extends Seeder
             $new_project->slug = Project::SlugGenerator($new_project->name);
             $new_project->client_name = $faker->company();
             $new_project->summary = $faker->paragraph();
-            $new_project->cover_image = $faker->imageUrl(640, 480, 'user', true);
             $new_project->save();
         }
     }

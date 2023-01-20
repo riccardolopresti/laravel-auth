@@ -23,7 +23,7 @@
 
         <div class="col">
             <div class="table-container px-5 py-3 ">
-                <form action="{{route('admin.projects.store')}}" method="POST">
+                <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
@@ -50,7 +50,7 @@
 
                     <div class="mb-3">
                         <label for="cover_image" class="form-label">URL immagine*</label>
-                        <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="URL immagine">
+                        <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="URL immagine">
 
                         @error('cover_image')
                             <p class="invalid-feedback">
