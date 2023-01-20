@@ -11,7 +11,7 @@
         <div class="px-5 py-3">
             @if (session('delete'))
                 <div class="alert alert-success" role="alert">
-                    {{session('delete')}}
+                    {!!session('delete')!!}
                 </div>
             @endif
             <h1 class="text-uppercase text-black-50">Lista dei Progetti</h1>

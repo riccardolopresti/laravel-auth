@@ -53,6 +53,17 @@ ol, ul, dl{
     z-index: 99;
 }
 
+.ck-editor__editable[role="textbox"] {
+    /* editing area */
+    height: 200px;
+}
+
+#output-image{
+    max-width: 100%;
+    width: 200px;
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 941px) {
     .aside-wrapper span{
         display: none;

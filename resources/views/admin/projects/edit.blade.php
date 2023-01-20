@@ -13,7 +13,7 @@
 
         <div class="col">
             <div class="table-container px-5 py-3 ">
-                <form action="{{route('admin.projects.update', $project)}}" method="POST">
+                <form action="{{route('admin.projects.update', $project)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -28,8 +28,11 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="cover_image" class="form-label">URL immagine*</label>
-                        <input type="text" class="form-control" id="cover_image" value="{{$project->cover_image}}" name="cover_image" placeholder="URL immagine">
+                        <label for="cover_image" class="form-label">Immagine*</label>
+                        <input onchange="showImg(event)" type="file" class="form-control" id="cover_image" value="{{$project->cover_image}}" name="cover_image" placeholder="Immagine">
+
+                        <img id="output-image" src="{{asset('storage/' . $project->cover_image)}}" alt="{{asset('storage/' . $project->image_origianal_name)}}">
+
                     </div>
 
                     <div class="mb-3">
@@ -48,4 +51,18 @@
 
     </div>
 </div>
+
+<script>
+    ClassicEditor
+            .create( document.querySelector( '#summary' ),{
+                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+    function showImg(event){
+        const tagImage = document.getElementById('output-image');
+        tagImage.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
 @endsection

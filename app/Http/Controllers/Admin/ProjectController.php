@@ -80,6 +80,7 @@ class ProjectController extends Controller
     public function edit($slug)
     {
         $project = Project::where('slug',$slug)->first();
+
         return view('admin.projects.edit', compact('project'));
     }
 
@@ -100,9 +101,21 @@ class ProjectController extends Controller
             $project['slug'];
         }
 
+        if(array_key_exists('image',$form_data)){
+
+            // se invio una nuova immagine devo eliminare la vecchia dal filesystem
+            if($project->cover_image){
+                Storage::disk('public')->delete($project->cover_image);
+            }
+
+            $form_data['image_original_name'] = $request->file('cover_image')->getClientOriginalName();
+
+            $form_data['cover_image'] = Storage::put('uploads',$form_data['cover_image']);
+        }
+
         $project->update($form_data);
 
-        return view('admin.projects.show', compact('project'));
+        return redirect()->route('admin.projects.show', $project->slug)->with('update',"Post <strong>$project->name</strong> aggiornato correttamente");
     }
 
     /**
@@ -115,6 +128,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.projects.index')->with('delete',"L'elemento $project->name è stato eliminato correttamente");
+        return redirect()->route('admin.projects.index')->with('delete',"L'elemento <strong>$project->name</strong> è stato eliminato correttamente");
     }
 }

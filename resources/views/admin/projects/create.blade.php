@@ -50,7 +50,9 @@
 
                     <div class="mb-3">
                         <label for="cover_image" class="form-label">Immagine*</label>
-                        <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="Immagine">
+                        <input onchange="showImg(event)" type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="Immagine">
+
+                        <img id="output-image" src="" alt="">
 
                         @error('cover_image')
                             <p class="invalid-feedback">
@@ -60,10 +62,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="summary" class="form-label">Descrizione*</label>
-                        <textarea class="form-control @error('summary') is-invalid @enderror" id="summary" name="summary" rows="3"
-                        placeholder="Descrizione"></textarea>
-
+                        <label for="summary" class="form-label d-block">Descrizione*</label>
+                        <textarea name="summary"  id="summary" rows="10">{{old('text')}}</textarea>
                         @error('summary')
                             <p class="invalid-feedback">
                                 {{$message}}
@@ -79,4 +79,18 @@
 
     </div>
 </div>
+
+<script>
+    ClassicEditor
+            .create( document.querySelector( '#summary' ),{
+                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+    function showImg(event){
+        const tagImage = document.getElementById('output-image');
+        tagImage.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
 @endsection
