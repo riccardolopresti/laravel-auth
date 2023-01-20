@@ -12,7 +12,9 @@
             <h1 class="text-uppercase text-black-50 mb-5">Dettaglio progetto {{$project->name}}</h1>
 
             <div class="card" style="max-width: 800px">
-                <img src="{{$project->cover_image}}" class="card-img-top" alt="{{$project->name}}">
+                @if ($project->cover_image)
+                    <img src="{{asset('storage/' . $project->cover_image)}}" class="card-img-top" alt="{{asset('storage/' . $project->image_original_name)}}">
+                @endif
 
                 <div class="card-body">
 

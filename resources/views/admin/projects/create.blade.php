@@ -49,8 +49,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="cover_image" class="form-label">URL immagine*</label>
-                        <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="URL immagine">
+                        <label for="cover_image" class="form-label">Immagine*</label>
+                        <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="Immagine">
 
                         @error('cover_image')
                             <p class="invalid-feedback">
