@@ -28,8 +28,10 @@ aside{
 .table-container{
     margin-top: 20px;
     width: 100%;
+    min-width: 300px;
     border: 1px solid gainsboro;
     border-radius: 15px;
+    overflow: auto;
 }
 
 .page-link{
@@ -47,8 +49,12 @@ ol, ul, dl{
     margin-bottom: 0;
 }
 
+
 .show{
-    text-align: end;
+    background-color: #ffffff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075);
+    border-top:1px solid gainsboro;
+    padding: 10px;
     padding-right: 10px;
     z-index: 99;
 }
@@ -71,5 +77,16 @@ ol, ul, dl{
 @media screen and (max-width: 941px) {
     .aside-wrapper span{
         display: none;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .aside-wrapper{
+        padding: 0;
+        margin: 0;
+    }
+
+    .list-group-item{
+        padding: 10px 6px;
     }
 }

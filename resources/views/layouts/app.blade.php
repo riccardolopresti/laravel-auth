@@ -36,7 +36,7 @@
         <div class="container-fluid">
             <div class="row">
                 @auth
-                    <aside class="col-2">
+                    <aside class="col-2 aside-col">
                         @include('admin.partials.aside')
                     </aside>
                 @endauth

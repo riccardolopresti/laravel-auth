@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row justify-content-center px-5 py-3">
 
-        <h1 class="text-uppercase text-black-50">Modifica {{$project->name}}</h1>
+        <h1 class="text-uppercase text-black-50">Modifica il progetto {{$project->name}}</h1>
 
         <div class="col">
             <div class="table-container px-5 py-3 ">
@@ -43,6 +43,7 @@
                         </textarea>
                     </div>
 
+                    <a href="{{route('admin.projects.index')}}" class="btn btn-danger" role="button" onclick="return confirm('Vuoi davvero tornare a tutti i progetti? Perderai tutte le modifiche effettuate')">Annulla e torna a tutti i progetti</a>
                     <button type="submit" class="btn btn-success">Modifica</button>
                   </form>
             </div>
