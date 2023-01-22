@@ -34,7 +34,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($projects as $project )
+                        @forelse ($projects as $project )
                             <tr>
                                 <th scope="row">{{$project->id}}</th>
                                 <td>{{$project->name}}</td>
@@ -45,7 +45,11 @@
                                     @include('admin.partials.delete-form')
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td colspan="4"><h3>Nessun risultato</h3></td>
+                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
 

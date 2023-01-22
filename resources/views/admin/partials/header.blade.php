@@ -32,7 +32,17 @@
                 </li>
             @endif
             @else
-                <li class="nav-item dropdown">
+
+                <div class="search-box">
+                    <form action="{{route('admin.projects.index')}}" method="GET" class="mx-5 d-flex align-items-center">
+                        @csrf
+                        <input class="rounded-pill search-custom" type="text" name="search" placeholder=" Cerca...">
+                        <button class="btn p-2" type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+
+                <li class="nav-item dropdown d-flex align-items-center">
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                             {{ __('Logout') }} <i class="fa-solid fa-right-from-bracket"></i>

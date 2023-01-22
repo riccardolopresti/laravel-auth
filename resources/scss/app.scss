@@ -74,6 +74,15 @@ ol, ul, dl{
     margin-top: 10px;
 }
 
+.u{
+    background-color: rgba(127, 255, 212, 0.488);
+}
+
+.search-custom{
+    border: 1px solid gainsboro;
+    height: 25px;
+}
+
 @media screen and (max-width: 941px) {
     .aside-wrapper span{
         display: none;
