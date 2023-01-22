@@ -50,9 +50,9 @@
 
                     <div class="mb-3">
                         <label for="cover_image" class="form-label">Immagine*</label>
-                        <input onchange="showImg(event)" type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="Immagine">
+                        <input onchange="showImg(event)" type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="Immagine" multiple>
 
-                        <img id="output-image" src="" alt="">
+                        <div id="output-image-container"></div>
 
                         @error('cover_image')
                             <p class="invalid-feedback">
@@ -89,8 +89,11 @@
                 console.error( error );
             } );
     function showImg(event){
-        const tagImage = document.getElementById('output-image');
-        tagImage.src = URL.createObjectURL(event.target.files[0]);
+        const tagImage = document.getElementById('output-image-container');
+        for (let i = 0; i < event.target.files.length; i++) {
+            let element = ` <img id="output-image" src="${URL.createObjectURL(event.target.files[i])}" alt=""> `
+            tagImage.innerHTML += element;
+        }
     }
 </script>
 @endsection
