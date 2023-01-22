@@ -25,7 +25,7 @@
 
                     <div class="custom-action d-flex mb-3">
                         <h4 class="card-title">{{$project->name}}</h4>
-                        <a class="btn btn-warning mx-2" href="{{route('admin.projects.edit', $project->slug)}}" role="button"><i class="fa-solid fa-pen"></i></a>
+                        <a class="btn btn-outline-warning mx-2" href="{{route('admin.projects.edit', $project->slug)}}" role="button"><i class="fa-solid fa-pen"></i></a>
 
                         @include('admin.partials.delete-form')
                     </div>

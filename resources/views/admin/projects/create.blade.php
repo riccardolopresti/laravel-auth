@@ -50,7 +50,7 @@
 
                     <div class="mb-3">
                         <label for="cover_image" class="form-label">Immagine*</label>
-                        <input onchange="showImg(event)" type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="Immagine" multiple>
+                        <input onchange="showImg(event)" type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" value="{{old('cover_image')}}" name="cover_image" placeholder="Immagine">
 
                         <div id="output-image-container"></div>
 
