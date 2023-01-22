@@ -20,6 +20,17 @@ aside{
     }
 }
 
+th{
+    a{
+        color: black;
+        text-decoration: none;
+        &:hover{
+            color: black;
+            text-decoration: underline;
+        }
+    }
+}
+
 .main-wrapper{
     height: calc(100vh - 80px);
     overflow: auto;

@@ -27,9 +27,46 @@
 
                     <thead>
                       <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Nome del Cliente</th>
+                        <th scope="col">
+                            <a href="{{route('admin.projects.orderby', ['id', $direction])}}">
+                                ID
+                                @if ($column == 'id')
+
+                                    @if ($direction === 'asc' && $column === 'id')
+                                        <i class="fa-solid fa-sort-down"></i>
+                                    @else
+                                        <i class="fa-solid fa-sort-up"></i>
+                                    @endif
+                                @endif
+
+                            </a>
+                        </th>
+                        <th scope="col">
+                            <a href="{{route('admin.projects.orderby', ['name', $direction])}}">
+                                Nome
+                                @if ($column == 'name')
+
+                                    @if ($direction === 'asc' && $column === 'name')
+                                        <i class="fa-solid fa-sort-down"></i>
+                                    @else
+                                        <i class="fa-solid fa-sort-up"></i>
+                                    @endif
+                                @endif
+                            </a>
+                        </th>
+                        <th scope="col">
+                            <a href="{{route('admin.projects.orderby', ['client_name', $direction])}}">
+                                Nome del Cliente
+                                @if ($column == 'client_name')
+                                    <i></i>
+                                    @if ($direction === 'asc' && $column === 'client_name')
+                                        <i class="fa-solid fa-sort-down"></i>
+                                    @else
+                                        <i class="fa-solid fa-sort-up"></i>
+                                    @endif
+                                @endif
+                            </a>
+                        </th>
                         <th scope="col">Azioni</th>
                       </tr>
                     </thead>

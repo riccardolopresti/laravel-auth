@@ -26,8 +26,9 @@ Route::middleware(['auth', 'verified'])
     ->group(function(){
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('projects', ProjectController::class);
-        Route::get('admin/projects/{slug}', [ProjectController::class, 'show'])->name('projects.show');
-        Route::get('admin/projects/{slug}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+        Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('projects.show');
+        Route::get('/projects/{slug}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+        Route::get('/projects/{column}/{direction}', [ProjectController::class, 'orderby'])->name('projects.orderby');
     });
 
 require __DIR__.'/auth.php';
