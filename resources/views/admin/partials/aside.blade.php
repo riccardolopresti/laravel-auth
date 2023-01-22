@@ -33,7 +33,7 @@
                         <i class="fab fa-github"></i>
                     </div>
                     <div class="testo px-2">
-                        <span>GitHub</span>
+                        <span>My GitHub</span>
                     </div>
                 </div>
 

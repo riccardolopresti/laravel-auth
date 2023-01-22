@@ -25,7 +25,7 @@ th{
         color: black;
         text-decoration: none;
         &:hover{
-            color: black;
+            color: slateblue;
             text-decoration: underline;
         }
     }
@@ -92,11 +92,20 @@ ol, ul, dl{
 .search-custom{
     border: 1px solid gainsboro;
     height: 25px;
+    &:focus{
+        outline:2px solid slateblue;
+    }
 }
 
 @media screen and (max-width: 941px) {
     .aside-wrapper span{
         display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-box{
+        margin-left: -50px;
     }
 }
 
@@ -110,3 +119,4 @@ ol, ul, dl{
         padding: 10px 6px;
     }
 }
+
