@@ -90,8 +90,9 @@
             } );
     function showImg(event){
         const tagImage = document.getElementById('output-image-container');
+        tagImage.innerHTML= '';
         for (let i = 0; i < event.target.files.length; i++) {
-            let element = ` <img id="output-image" src="${URL.createObjectURL(event.target.files[i])}" alt=""> `
+            element = ` <img id="output-image" src="${URL.createObjectURL(event.target.files[i])}" alt=""> `
             tagImage.innerHTML += element;
         }
     }
