@@ -26,6 +26,19 @@
 
             </a>
         </li>
+        <li class="list-group-item">
+            <a target="_blank" href="https://github.com/RiccardoLoPresti">
+                <div class="wrapper-link d-flex">
+                    <div class="ico d-flex align-items-center">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="testo px-2">
+                        <span>GitHub</span>
+                    </div>
+                </div>
+
+            </a>
+        </li>
     </ul>
 
 </div>
