@@ -22,7 +22,8 @@ class ProjectController extends Controller
             $search =$_GET['search'];
 
             $projects = Project::where('name','like',"%$search%")
-                ->orWhere('client_name','like',"%$search%")->paginate(10);
+                ->orWhere('client_name','like',"%$search%")
+                ->orWhere('id','like',"%$search%")->paginate(10);
         }else{
             $projects = Project::orderBy('id','desc')->paginate(10);
         }
