@@ -40,8 +40,8 @@
                                 <td>{{$project->name}}</td>
                                 <td>{{$project->client_name}}</td>
                                 <td>
-                                    <a class="btn btn-primary" href="{{route('admin.projects.show', $project->slug)}}" role="button"><i class="fa-solid fa-eye"></i></a>
-                                    <a class="btn btn-warning" href="{{route('admin.projects.edit', $project->slug)}}" role="button"><i class="fa-solid fa-pen"></i></a>
+                                    <a class="btn btn btn-outline-info" href="{{route('admin.projects.show', $project->slug)}}" role="button"><i class="fa-solid fa-eye"></i></a>
+                                    <a class="btn btn-outline-warning" href="{{route('admin.projects.edit', $project->slug)}}" role="button"><i class="fa-solid fa-pen"></i></a>
                                     @include('admin.partials.delete-form')
                                 </td>
                             </tr>
